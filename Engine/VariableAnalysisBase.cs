@@ -1607,6 +1607,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
             return result;
         }
 
+ #if !PSV3
         /// <summary>
         /// Checks whether a class with the name name exists in the script that contains ast
         /// </summary>
@@ -1634,7 +1635,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
 
             return null;
         }
-
+#endif
+#if !PSV3
         /// <summary>
         /// Finds the closest class ancestor of ast
         /// </summary>
@@ -1663,8 +1665,8 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
 
             return null;
         }
-
-        #if !PSV3
+#endif
+#if !PSV3
 
         /// <summary>
         /// Get the type for memberexpressionast assuming that the variable is a class
@@ -1696,7 +1698,7 @@ namespace Microsoft.Windows.PowerShell.ScriptAnalyzer
             return result;
         }
 
-        #endif
+#endif
 
         private void SetVariableName()
         {
